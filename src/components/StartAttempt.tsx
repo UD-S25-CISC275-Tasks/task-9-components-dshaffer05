@@ -23,7 +23,9 @@ export function StartAttempt(): React.JSX.Element {
             <div>Current Attempts: {attempts}</div>
             <div>
                 {progress && <Button onClick={stop}>Stop Quiz</Button>}
-                {!progress && <Button onClick={start}>Start Quiz</Button>}
+                {!progress && attempts > 0 && (
+                    <Button onClick={start}>Start Quiz</Button>
+                )}
                 {!progress && <Button onClick={mulligan}>Mulligan</Button>}
             </div>
         </div>
