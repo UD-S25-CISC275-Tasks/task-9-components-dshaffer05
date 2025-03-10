@@ -15,30 +15,30 @@ export function TwoDice(): React.JSX.Element {
     const [leftDie, setleftDie] = useState<number>(3);
     const [rightDie, setrightDie] = useState<number>(4);
 
-    function roll1(): void {
+    /*function roll1(): void {
         let value = d6();
         setleftDie(value);
     }
     function roll2(): void {
         let value2 = d6();
         setrightDie(value2);
-    }
+    }*/
 
     return (
         <div>
-            <span data-testid="left-die">Die 1: {leftDie}</span>
-            <span data-testid="right-die"> Die 2: {rightDie}</span>
+            Die 1: <span data-testid="left-die">{leftDie}</span>
+            Die 2: <span data-testid="right-die">{rightDie}</span>
             <div>
                 <Button
                     onClick={() => {
-                        roll1();
+                        setleftDie(d6);
                     }}
                 >
                     Roll Left
                 </Button>
                 <Button
                     onClick={() => {
-                        roll2();
+                        setrightDie(d6);
                     }}
                 >
                     Roll Right
