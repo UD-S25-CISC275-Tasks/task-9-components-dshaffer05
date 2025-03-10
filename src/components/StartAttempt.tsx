@@ -22,11 +22,15 @@ export function StartAttempt(): React.JSX.Element {
         <div>
             <div>Current Attempts: {attempts}</div>
             <div>
-                {progress && <Button onClick={stop}>Stop Quiz</Button>}
-                {!progress && attempts > 0 ? (
-                    <Button onClick={start}>Start Quiz</Button>
-                ) : null}
-                {!progress && <Button onClick={mulligan}>Mulligan</Button>}
+                <Button onClick={stop} disabled={!progress}>
+                    Stop Quiz
+                </Button>
+                <Button onClick={start} disabled={progress || attempts <= 0}>
+                    Start Quiz
+                </Button>
+                <Button onClick={mulligan} disabled={progress}>
+                    Mulligan
+                </Button>
             </div>
         </div>
     );
