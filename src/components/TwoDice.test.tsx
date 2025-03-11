@@ -1,7 +1,6 @@
 import React, { act } from "react";
 import { render, screen } from "@testing-library/react";
 import { TwoDice } from "./TwoDice";
-import "@testing-library/jest-dom";
 import { extractDigits } from "./StartAttempt.test";
 
 describe("TwoDice Component tests", () => {
